@@ -25,7 +25,7 @@ class _insertCoin extends State<insertCoin>{
   //Key necessaria per far funzionare la form
   final _formKey = GlobalKey<FormState>();
   //Lista per convertire i tipi di transazioni da intero a stringa
-  final states = ["Buy", "Sell", "Transfer In", "Transfer Out", "Mining", "Stacking"];
+  final states = ["Buy", "Sell", "Transfer In", "Transfer Out", "Mining", "Staking"];
 
   //Tutte le variabili che possono essere inserite nella form
   var type = "Buy";

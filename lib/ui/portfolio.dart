@@ -283,9 +283,10 @@ class _portfolio extends State<portfolio>{
   //Funzione che si occupa di aggiornare lo stato da internet e database
   Future<Null> getData() async {
     final data = await getBalances();
-    final coins = await getSpecificCoins(data.map((v) => v.ticker).toList());
+    final filteredData = data.where((d) => d.balance != 0);
+    final coins = await getSpecificCoins(filteredData.map((v) => v.ticker).toList());
     setState(() {
-      _balances = data;
+      _balances = filteredData;
       _coins = coins;
     });
   }
